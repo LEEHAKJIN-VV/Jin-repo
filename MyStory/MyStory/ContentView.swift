@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var path: [Story] = []
     var body: some View {
-        NavigationStack {
-            StoryView(story: mylist[1], pageNumber: 1)
-            .navigationTitle("What IF")
+        NavigationStack(path: $path) {
+            StoryView(story: mylist[1])
         }
         .padding()
     }
